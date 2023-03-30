@@ -105,7 +105,6 @@ resource "azurerm_api_management_product_policy" "premium" {
 #Add subscription to starter product
 resource "azurerm_api_management_subscription" "starter" {
   product_id            = azurerm_api_management_product.starter.product_id
-  user_id               = azurerm_api_management_user.user.id
   api_management_name   = azurerm_api_management.apim.name
   resource_group_name   = azurerm_resource_group.rg.name
   display_name          = "Starter"
@@ -115,7 +114,6 @@ resource "azurerm_api_management_subscription" "starter" {
 #Add subscription to premium product
 resource "azurerm_api_management_subscription" "premium" {
   product_id            = azurerm_api_management_product.premium.product_id
-  user_id               = azurerm_api_management_user.user.id
   api_management_name   = azurerm_api_management.apim.name
   resource_group_name   = azurerm_resource_group.rg.name
   display_name          = "Premium"
